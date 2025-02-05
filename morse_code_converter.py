@@ -65,8 +65,9 @@ input_text = input("Please enter a string: ")
 
 
 def text_to_morse_code(input_texts):
+    input_texts = input_texts.upper() # Convert input to uppercase for consistency
     morse_code = []  # Initialize the list to store Morse code translations
-    for letter in input_texts.upper():  # Convert input to uppercase for consistency
+    for letter in input_texts:  
         if letter in MORSE_CODE_DICT:  # Check if the letter exists in dictionary
             morse_code.append(MORSE_CODE_DICT[letter])
 
