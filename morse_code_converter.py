@@ -76,4 +76,4 @@ def text_to_morse_code(input_texts):
 # Example Usage
 result = text_to_morse_code(input_text)
 # print("Morse Code List:", result)
-print(f'The morse code for "{input_text}" is \n {result}')
+print(f'The morse code for "{input_text}" is \n {" ".join(result)}')
