@@ -54,28 +54,30 @@ MORSE_CODE_DICT = {
 }
 
 
-# 2. Take an input string and convert it to uppercase (Morse code is case-insensitive).
-input_text = input("Please enter a string: ")
-# print(f"check input_value: {input_text}")
-
-
-# 3. Replace each character in the string with its Morse code equivalent.
-# Check each letter of the input_value against KEY of MORSE_CODE_DICT
-# If match then take its Value.
-
-
 def text_to_morse_code(input_texts):
     morse_code = []  # Initialize the list to store Morse code translations
-    for letter in input_texts.upper():  # Convert input to uppercase for consistency
+    for letter in input_texts:  # Convert input to uppercase for consistency
         if letter in MORSE_CODE_DICT:  # Check if the letter exists in dictionary
-            print(f"values match: {letter} to {MORSE_CODE_DICT[letter]} ")
+            # print(f"values match: {letter} to {MORSE_CODE_DICT[letter]} ")
             morse_code.append(MORSE_CODE_DICT[letter])
-            print(f"check morse code output: {morse_code}")
+            # print(f"check morse code output: {morse_code}")
 
     return morse_code  # Return the Morse code list
 
 
-# Example Usage
-result = text_to_morse_code(input_text)
-# print("Morse Code List:", result)
-print(f'The morse code for "{input_text}" is \n {result}')
+if (
+    __name__ == "__main__"
+):  # Ensures play_game() is only called when the script is run directly
+    # 2. Take an input string and convert it to uppercase (Morse code is case-insensitive).
+    input_text = input("Please enter a string: ").upper()
+    # print(f"check input_value: {input_text}")
+
+    # 3. Replace each character in the string with its Morse code equivalent.
+    # Check each letter of the input_value against KEY of MORSE_CODE_DICT
+    # If match then take its Value.
+
+    # Example Usage
+    result = text_to_morse_code(input_text)
+    result_str = " ".join(map(str, result))
+    # print("Morse Code List:", result)
+    print(f'The morse code for "{input_text}" is \n {result_str}')
