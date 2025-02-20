@@ -55,15 +55,20 @@ MORSE_CODE_DICT = {
 
 
 def text_to_morse_code(input_texts):
+    input_texts = input_texts.upper() # Convert input to uppercase for consistency
     morse_code = []  # Initialize the list to store Morse code translations
-    for letter in input_texts:  # Convert input to uppercase for consistency
+    for letter in input_texts:  
         if letter in MORSE_CODE_DICT:  # Check if the letter exists in dictionary
-            # print(f"values match: {letter} to {MORSE_CODE_DICT[letter]} ")
             morse_code.append(MORSE_CODE_DICT[letter])
-            # print(f"check morse code output: {morse_code}")
 
     return morse_code  # Return the Morse code list
 
+
+
+# Example Usage
+result = text_to_morse_code(input_text)
+# print("Morse Code List:", result)
+print(f'The morse code for "{input_text}" is \n {" ".join(result)}')
 
 if (
     __name__ == "__main__"
@@ -76,8 +81,4 @@ if (
     # Check each letter of the input_value against KEY of MORSE_CODE_DICT
     # If match then take its Value.
 
-    # Example Usage
-    result = text_to_morse_code(input_text)
-    result_str = " ".join(map(str, result))
-    # print("Morse Code List:", result)
-    print(f'The morse code for "{input_text}" is \n {result_str}')
+
